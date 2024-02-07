@@ -55,3 +55,36 @@ add nazionalita char(3) first;
 alter table studenti
 modify nome varchar(30), add eta tinyint after data_nascita, drop nazionalita;
 
+create table studenti_bk like studenti;
+drop table studenti_bk;
+
+create table studenti_bk like studenti;
+create table studenti_bk2 like studenti;
+drop table studenti_bk, studenti_bk2;
+
+-- DML
+
+insert into studenti(nome, citta, email)
+value('oscar', 'torino', 'oscar@gmail.com');
+alter table studenti modify cognome varchar(50) not null;
+select * from studenti;
+delete from studenti where id = 1;
+
+insert into studenti(nome, cognome, citta, email)
+value('oscar','vecchione', 'torino', 'oscar@gmail.com');
+
+insert into studenti
+set cognome = 'de rossi', nome = 'andrea', genere = 'f', email='derossi@gmail';
+
+insert into studenti(nome, cognome, genere, email)
+values('paolo','raviola','m','pr@gmail.com'),
+('Maria','Luce','f','marialuce@gmail.com'),
+('franco','spagnolo','m','fspagnolo@icloud.com');
+
+alter table studenti drop eta;
+
+insert into studenti
+values(7, 'Pippo', 'Fava', 'm', 'via marche 3', 'Monza', 'mi', 'Lombardia', 'pfava@iclod.com', '1999-02-14', '2024-02-07 17:47:00');
+
+insert into studenti
+values(default,'anna','rossi','f',null,'torino',default,default,'annarossi@gmail.com',null,default);
