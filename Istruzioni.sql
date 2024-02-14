@@ -9,3 +9,7 @@ grant all on tss2024.* to 'app_tss'@'localhost';
 
 create database if not exists java;
 grant all on java.* to 'app_tss'@'localhost';
+
+
+create database if not exists corsi;
+grant all on corsi.* to 'app_tss'@'localhost';

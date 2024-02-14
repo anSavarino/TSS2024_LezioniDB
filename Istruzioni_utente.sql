@@ -232,3 +232,41 @@ select * from studenti where data_nascita is not null;
 -- like, not like
 select * from studenti where cognome like 'v%' order by cognome;
 select * from studenti where nome like '%a' order by nome;
+select * from studenti where nome like 'pao__' order by nome;
+select * from studenti where nome like '%ara%' order by nome;
+select * from studenti where email like '%gmail.com' order by cognome;
+select * from studenti where indirizzo like 'via %' order by cognome;
+
+-- Regular expression
+select * from studenti where nome regexp '^mar';
+select * from studenti where nome regexp 'co$';
+select * from studenti where nome regexp 'mar|ara|ola';
+select * from studentlibrolibroi where nome regexp '^mar|ara|ola$';
+select * from studenti where nome regexp '[mcp]a';
+select * from studenti where nome regexp 'l[ao]$';
+
+select * from studenti where cognome regexp '^[a-m]' order by cognome;
+
+select titolo, prezzo, prezzo * 1.10 from libro;
+
+select titolo, prezzo, prezzo * 1.10 from libro;
+drop table libro;
+desc libro;
+CREATE TABLE `libro` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `titolo` varchar(100) DEFAULT NULL,
+  `prezzo` decimal(6,2) DEFAULT NULL,
+  `prezzo_iva` decimal(6,2) as (prezzo*1.10),  -- Stored 
+  `pagine` smallint DEFAULT NULL,
+  `id_editore` smallint DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+select prezzo, prezzo_iva from libro;
+
+insert into libro(titolo, prezzo, pagine, id_editore) values('Marcovaldo', 15, 214, 2);
+
+desc libro;
+show create table libro;
+
+desc studenti;
