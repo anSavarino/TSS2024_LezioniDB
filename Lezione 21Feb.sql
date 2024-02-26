@@ -48,3 +48,14 @@ select *from corsi;
 
 delete from docenti where id = 1;
 select * from docenti;
+
+-- set null
+alter table corsi 
+add constraint fk_corsi_docenti
+foreign key(docente_id) references docenti(id)
+on update cascade on delete set null;
+
+desc corsi;
+
+select * from docenti;
+select * from corsi;
