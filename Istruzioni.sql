@@ -13,3 +13,13 @@ grant all on java.* to 'app_tss'@'localhost';
 
 create database if not exists corsi;
 grant all on corsi.* to 'app_tss'@'localhost';
+
+create database if not exists biblio;
+grant all on biblio.* to 'app_tss'@'localhost';
+
+create database if not exists gestionale;
+grant all on gestionale.* to 'app_tss'@'localhost';
+
+create database if not exists CRM;
+grant all on CRM.* to 'app_tss'@'localhost';
+
